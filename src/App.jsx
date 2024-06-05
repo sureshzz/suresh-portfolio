@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 
 export default function App() {
   return (
-    <div className='bg-blue-950 min-h-screen'>
+    <div className=''>
         <Navbar />
     </div>
   );
