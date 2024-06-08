@@ -9,7 +9,7 @@ const Navbar = () => {
     "hover:scale-100 hover:scale-110 duration-50 cursor-pointer hover:text-white px-4";
   const links = [
     { id: 1, link: "About" },
-    { id: 2, link: "Works" },
+    { id: 2, link: "Portfolio" },
     { id: 3, link: "Skills" },
     { id: 4, link: "Contact" },
   ];
