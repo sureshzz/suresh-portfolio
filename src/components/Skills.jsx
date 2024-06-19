@@ -8,6 +8,7 @@ import python from '../assets/portfolio/python.png'
 import mysql from '../assets/portfolio/mysql.png'
 import mongo from '../assets/portfolio/mongo.png'
 import github from '../assets/portfolio/github.png'
+import django from '../assets/portfolio/django.png'
 
 const Skills = () => {
 
@@ -21,55 +22,61 @@ const Skills = () => {
     {
       id: 2,
       src: css,
-      title: "HTML",
+      title: "CSS",
       style: "shadow-orange-500",
     },
     {
       id: 3,
       src: js,
-      title: "HTML",
+      title: "Javascripts",
       style: "shadow-orange-500",
     },
     {
       id: 4,
       src: reactjs,
-      title: "HTML",
+      title: "Reactjs",
       style: "shadow-orange-500",
     },
     {
       id: 5,
       src: mongo,
-      title: "HTML",
+      title: "MongoDB",
       style: "shadow-orange-500",
     },
     {
       id: 6,
       src: mysql,
-      title: "HTML",
+      title: "Mysql",
       style: "shadow-orange-500",
     },
     {
       id: 7,
       src: github,
-      title: "HTML",
+      title: "Github",
       style: "shadow-orange-500",
     },
     {
       id: 8,
       src: tailwindcss,
-      title: "HTML",
+      title: "Tailwindcss",
       style: "shadow-orange-500",
     },
     {
       id: 9,
       src: python,
-      title: "HTML",
+      title: "Python",
       style: "shadow-orange-500",
     },
     {
       id: 10,
+      src: django,
+      title: "Django",
+      style: "shadow-orange-500 pt-10",
+    },
+    {
+      id: 11,
       src: github,
-      title: "HTML",
+      title: "Django",
       style: "shadow-orange-500",
     },
   ];
