@@ -9,6 +9,7 @@ import mysql from '../assets/portfolio/mysql.png'
 import mongo from '../assets/portfolio/mongo.png'
 import github from '../assets/portfolio/github.png'
 import django from '../assets/portfolio/django.png'
+import laravel from '../assets/portfolio/laravel-logo-1.png'
 
 const Skills = () => {
 
@@ -75,8 +76,8 @@ const Skills = () => {
     },
     {
       id: 11,
-      src: github,
-      title: "Django",
+      src: laravel,
+      title: "Laravel",
       style: "shadow-orange-500",
     },
   ];
