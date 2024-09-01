@@ -9,6 +9,7 @@ import LocomotiveScroll from "locomotive-scroll";
 // import "locomotive-scroll/src/locomotive-scroll.scss"; // Ensure to include the styles
 
 export default function App() {
+  
   const scrollRef = useRef(null);
 
   useEffect(() => {
