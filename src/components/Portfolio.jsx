@@ -45,7 +45,7 @@ const Portfolio = () => {
     },
   ];
   return (
-    <div className="bg-gradient-to-b from-gray-800 to-black w-full flex justify-center">
+    <div className="bg-gradient-to-b from-gray-800 to-black w-full flex justify-center relative">
       <div className="max-w-screen-lg flex-col justify-center w-full h-full text-white p-3 ">
           <h1 className="my-[2vw] font-bold font-[Roboto] text-4xl leading-tighter text-zinc-200">
             My works

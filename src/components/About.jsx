@@ -1,7 +1,8 @@
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll,useTransform } from "framer-motion";
 import React from "react";
 
-const About = () => {
+const About = ({ scrollYProgress }) => {
+
   const commoncss = "text-zinc-400 text-6xl font-semibold";
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -18,8 +19,13 @@ const About = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  // const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  // const rotate = useTransform(scrollYProgress, [0, 1], [-7, 1]);
   return (
-    <motion.div className="bg-gradient-to-b  from-gray-800 to-black w-full h-screen">
+    <motion.div
+      // style={{scale,rotate }}
+      className="bg-gradient-to-b  from-gray-800 to-black w-full h-screen sticky top-0"
+    >
       <motion.div
         className=""
         variants={containerVariants}
@@ -32,7 +38,10 @@ const About = () => {
         >
           NAMASKAR !!!
         </motion.h2>
-        <motion.h2 variants={itemVariants} className={`${commoncss} font-semibold`}>
+        <motion.h2
+          variants={itemVariants}
+          className={`${commoncss} font-semibold`}
+        >
           I am Suresh Thapamagar.
         </motion.h2>
         <motion.h2 variants={itemVariants} className={`${commoncss} `}>

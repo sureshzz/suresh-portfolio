@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "../App.css";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({scrollYProgress}) => {
   const [nav, setnav] = useState(false);
   const elementCSS =
     "hover:scale-100 duration-50 cursor-pointer hover:text-white px-4";
@@ -14,9 +14,12 @@ const Navbar = () => {
     { id: 3, link: "Skills" },
     { id: 4, link: "Contact" },
   ];
+  const scale = useTransform(scrollYProgress,[0,1],[1,0.2])
+  // const bg = useTransform(scrollYProgress,[0,1],[1,0.2])
+  const rotate = useTransform(scrollYProgress,[0,1],[0,-7])
 
   return (
-    <div className="bg-slate-900 h-20 flex flex-row justify-between items-center">
+    <motion.div style={{scale,rotate}} className="bg-slate-900 h-20 flex flex-row justify-between items-center sticky top-0">
       <div className="font-logo text-white">
         <h1 className="text-5xl mx-1 p-4 hover-rotate-360 duration-100">
           Suresh
@@ -69,7 +72,7 @@ const Navbar = () => {
           ))}
         </ul>
       )}
-    </div>
+    </motion.div>
   );
 };
 
