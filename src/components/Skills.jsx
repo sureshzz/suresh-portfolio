@@ -1,4 +1,6 @@
 import React from 'react'
+import { useScroll,motion,useTransform } from 'framer-motion';
+import { useRef,useEffect } from 'react';
 import html from '../assets/portfolio/html.png'
 import css from '../assets/portfolio/css.png'
 import js from '../assets/portfolio/vanillajs.png'
@@ -82,9 +84,27 @@ const Skills = () => {
     },
   ];
 
+  const container = useRef(null);
+
+  const {scrollYProgress} = useScroll({
+    target:container,
+    offset:["start end","end start"]
+  })
+
+useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((value) => {
+      console.log("scrollYProgress value:", value); // This will now print correctly
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
+
+    const scale = useTransform(scrollYProgress, [0, 0.45], [0.75,1]);
+  const rotate = useTransform(scrollYProgress, [0, 0.45], [-7,0]);
+
 
   return (
-    <div
+    <motion.div style={{scale,rotate}} ref={container}
        className="bg-gradient-to-b from-gray-800 to-black w-full relative"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
@@ -107,7 +127,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

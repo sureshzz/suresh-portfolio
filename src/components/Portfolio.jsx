@@ -4,6 +4,8 @@ import major from "../assets/portfolio/major.png"
 import minor from "../assets/portfolio/minor.png"
 import theatre from "../assets/portfolio/theatre-booking.png";
 import LocomotiveScroll from "locomotive-scroll";
+import { useScroll,motion,useTransform } from 'framer-motion';
+import { useRef,useEffect } from 'react';
 
 
 const Portfolio = () => {
@@ -44,8 +46,27 @@ const Portfolio = () => {
 
     },
   ];
+
+  const container = useRef(null);
+
+  const {scrollYProgress} = useScroll({
+    target:container,
+    offset:["start end","end start"]
+  })
+
+// useEffect(() => {
+//     const unsubscribe = scrollYProgress.onChange((value) => {
+//       console.log("scrollYProgress value:", value); // This will now print correctly
+//     });
+//     return () => unsubscribe();
+//   }, [scrollYProgress]);
+
+  const scale = useTransform(scrollYProgress, [0, 0.45], [0.75,1]);
+  const rotate = useTransform(scrollYProgress, [0, 0.45], [-7,0]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.25,0.45], [0,1,0]);
+
   return (
-    <div className="bg-gradient-to-b from-gray-800 to-black w-full flex justify-center relative">
+    <motion.div style={{scale,rotate}} ref={container} className="bg-gradient-to-b from-gray-800 to-black w-full flex justify-center relative">
       <div className="max-w-screen-lg flex-col justify-center w-full h-full text-white p-3 ">
           <h1 className="my-[2vw] font-bold font-[Roboto] text-4xl leading-tighter text-zinc-200">
             My works
@@ -69,7 +90,7 @@ const Portfolio = () => {
             </div>
           </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

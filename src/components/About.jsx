@@ -1,8 +1,9 @@
 import { motion, useScroll,useTransform } from "framer-motion";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const About = ({ scrollYProgress }) => {
+const About = () => {
 
+  const container = useRef(null);
   const commoncss = "text-zinc-400 text-6xl font-semibold";
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -19,12 +20,25 @@ const About = ({ scrollYProgress }) => {
     visible: { opacity: 1, y: 0 },
   };
 
-  // const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+
+//   const {scrollYProgress} = useScroll({
+//     target:container,
+//     offset:["start end","end start"]
+//   })
+// useEffect(() => {
+//     const unsubscribe = scrollYProgress.onChange((value) => {
+//       console.log("scrollYProgress value:", value); // This will now print correctly
+//     });
+//     return () => unsubscribe();
+//   }, [scrollYProgress]);
+  // const scale = useTransform(scrollYProgress, [0, 0.5], [1,0.5]);
+  // const rotate = useTransform(scrollYProgress, [0.49, 0.5], [0,-7]);
   // const rotate = useTransform(scrollYProgress, [0, 1], [-7, 1]);
+  //  const rotate = useTransform(scrollYProgress, [0, 1], [0,0]);
   return (
     <motion.div
-      // style={{scale,rotate }}
       className="bg-gradient-to-b  from-gray-800 to-black w-full h-screen sticky top-0"
+      ref={container}
     >
       <motion.div
         className=""
