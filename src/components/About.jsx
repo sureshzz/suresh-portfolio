@@ -59,10 +59,10 @@ const About = () => {
           I am Suresh Thapamagar.
         </motion.h2>
         <motion.h2 variants={itemVariants} className={`${commoncss} `}>
-          A so-called fullstack Developer.
+          A fullstack Developer.
         </motion.h2>
         <motion.p className={`${commoncss} `} variants={itemVariants}>
-          React.js enables me to build responsive and user-friendly interfaces,
+          React.js/Nextjs enables me to build responsive and user-friendly interfaces,
           while my proficiency in Django allows me to develop efficient and
           scalable server-side solutions.
         </motion.p>
